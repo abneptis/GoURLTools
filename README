@@ -1,0 +1,5 @@
+  A more generalized escape pattern than the native go URL escape.
+
+  It does NOT try to be especially fast, but it does try to be very 
+general-case for where you need more granular control than what is
+provided in http.URLEscape()
