@@ -1,3 +1,8 @@
+// URL parsing and manipulation functions.
+//
+// URL tools provides various escaping and manipulation functions
+// that may be useful for those implementing network protocols
+//
 package urltools
 
 func Rfc3986Reserved(i byte)(out bool){
