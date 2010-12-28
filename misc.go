@@ -32,3 +32,16 @@ func ExtractURLHostPort(url *http.URL)(hostport string, err os.Error){
   return
 }
 
+// Appends the parameters to the URL, escaping the key and value strings.
+// If the URL already has parameters, an & will be inserted.
+//
+// Trailing &'s in the inurl will cause duplicate &'s in the outurl.
+func AppendParams(inurl http.URL, parms map[string][]string)(outurl http.URL){
+  outurl = inurl
+  pstr := http.EncodeQuery(parms)
+  if len(pstr) > 0 {
+    if len(outurl.RawQuery) > 0 { outurl.RawQuery += "&" }
+    outurl.RawQuery += pstr
+  }
+  return
+}
